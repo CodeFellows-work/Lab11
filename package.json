@@ -1,0 +1,23 @@
+{
+  "name": "Lab11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "events.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunny-lee3/Lab11.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunny-lee3/Lab11/issues"
+  },
+  "homepage": "https://github.com/sunny-lee3/Lab11#readme",
+  "dependencies": {
+    "jest": "^27.0.6"
+  }
+}
