@@ -2,43 +2,20 @@
 
 const events = require('../events.js'); 
 
-require('../driver/driver.js');
-require('../vendor/vendor.js');
 
-events.on('pickup', pickUpHandler); 
-events.on('in-transit', inTransitHandler);
-events.on('delivered', deliveredHandler);
-
-pickUpHandler= (payload) => {
-    let theInfo = {
+setInterval(() => {
+    let date = new Date(); 
+    let time = `${date.getHours()}:${date.getMinutes()}`;
+    let payloadInfo = {
         event: 'pickup',
-        time: new Date(),
-        payload: payload
-    };
-    console.log('EVENT ', theInfo);
-}
-inTransitHandler= (payload) => {
-    let theInfo = {
-        event: 'in-transit',
-        time: new Date(), 
-        payload: payload
+        time: time,
+        payload: {
+            store: 'ABC store',
+            orderID: 1234567890,
+            customer: 'Bill',
+            address: 'ABC store On 1234 234 NE'
+        }
     }
-    console.log('EVENT ', theInfo);
-}
-deliveredHandler= (payload) => {
-    let theInfo = {
-        event: 'delivered',
-        time: new Date(), 
-        payload: payload
-    }
-    console.log('EVENT', theInfo); 
-}
-
-module.exports = {
-    pickUpHandler = pickUpHandler,
-    inTransitHandler = inTransitHandler,
-    deliveredHandler = deliveredHandler
-};
-
-
+    events.emit('pickup', {payloadfInfo: payloadInfo})
+}, 5000);
 
